@@ -4,7 +4,7 @@ pipelineStages := Seq(gzip)
 
 // set an include filter for js files only
 
-includeFilter in gzip := "*.js"
+gzip / includeFilter := "*.js"
 
 // for checking that the produced pipeline mappings are correct
 

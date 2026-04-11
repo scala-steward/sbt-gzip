@@ -4,7 +4,7 @@ pipelineStages := Seq(gzip)
 
 // set an exclude filter for css files
 
-excludeFilter in gzip := "*.css"
+gzip / excludeFilter := "*.css"
 
 // for checking that the produced pipeline mappings are correct
 
