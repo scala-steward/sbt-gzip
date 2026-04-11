@@ -1,10 +1,15 @@
-val root = (project in file(".")).enablePlugins(SbtWeb)
+val root = (project in file("."))
+  .enablePlugins(SbtWeb)
+  .settings(
+    // Classic target layout so scripted checks keep working on sbt 2.
+    target := baseDirectory.value / "target"
+  )
 
 pipelineStages := Seq(gzip)
 
 // set an include filter for js files only
 
-includeFilter in gzip := "*.js"
+gzip / includeFilter := "*.js"
 
 // for checking that the produced pipeline mappings are correct
 
